@@ -1,4 +1,4 @@
-package GerenciadorEstudos;
+package negocio.beans;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package GerenciadorEstudos;
+package negocio.beans;
 
 import java.util.ArrayList;
 
