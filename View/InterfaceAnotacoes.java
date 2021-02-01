@@ -2,11 +2,19 @@ package View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import dados.IRepositorioAnotacoes;
+import dados.RepositorioAnotacoesArray;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import negocio.Quadro;
 
 public class InterfaceAnotacoes {
+    
+    IRepositorioAnotacoes anotacoes = new RepositorioAnotacoesArray(10);
+    Quadro quadro1 = new Quadro(anotacoes);
 
     @FXML
     private ResourceBundle resources;
@@ -22,6 +30,12 @@ public class InterfaceAnotacoes {
 
     @FXML
     private Button botaoSalvar;
+
+    @FXML
+    void acaoDoBotao(ActionEvent event) {
+        quadro1.criaAnotacao(tituloDigitado.getText(), textoDigitado.getText());
+        quadro1.listarAnotacoes();
+    }
 
     @FXML
     void initialize() {

@@ -8,13 +8,6 @@
             "type": "java",
             "name": "Launch App",
             "request": "launch",
-            "mainClass": "View.App",
-            "projectName": "Projeto_POO_5ef00caa"
-        },
-        {
-            "type": "java",
-            "name": "Launch App",
-            "request": "launch",
             "mainClass": "App",
             "projectName": "Projeto_POO_5ef00caa"
         },
@@ -26,10 +19,10 @@
         },
         {
             "type": "java",
-            "name": "Launch Main",
+            "name": "Launch App",
             "request": "launch",
-            "vmArgs": "--module-path C:\\Users\\mathe\\javafx-sdk-11.0.2\\lib --add-modules javafx.controls, javafx.fxml, javafx-swt, javafx.web, javafx.swing, javafx.media, javafx.graphics, javafx.base",
-            "mainClass": "Main",
+            "vmArgs": "--module-path C:\\Users\\mathe\\javafx-sdk-11.0.2\\lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "View.App",
             "projectName": "Projeto_POO_5ef00caa"
         }
     ]
