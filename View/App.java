@@ -7,10 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
+    
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaceAnotacoes.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaceProjeto.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Scene scene = new Scene(root);
 

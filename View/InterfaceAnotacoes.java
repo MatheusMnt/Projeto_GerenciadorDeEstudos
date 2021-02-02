@@ -37,6 +37,7 @@ public class InterfaceAnotacoes {
         quadro1.listarAnotacoes();
     }
 
+
     @FXML
     void initialize() {
         assert tituloDigitado != null : "fx:id=\"tituloDigitado\" was not injected: check your FXML file 'interfaceAnotacoes.fxml'.";
