@@ -16,5 +16,7 @@ public class Regras {
     public void addUsuario(Usuario user) {
         users.addUsuario(user);
     }
+
+
     
 }

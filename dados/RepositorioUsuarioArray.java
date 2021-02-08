@@ -50,6 +50,15 @@ public class RepositorioUsuarioArray implements IRepositorioUsuario {
             }
         }
     }
+    public boolean Verifica(String login, String senha){
+        boolean contem = false;
+        for (Usuario e : this.usuarios){
+            if (e.getLogin() == login && e.getSenha() == senha){
+                contem = true;
+            } 
+        }
+    return contem;
+    }
 
     public void listarUsuariosCadastrados(){
         for (Usuario e : this.usuarios){

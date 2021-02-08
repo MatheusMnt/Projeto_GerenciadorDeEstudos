@@ -7,6 +7,7 @@ public interface IRepositorioUsuario {
     void alteraLogin(Usuario user, String login);
     void alteraSenha(Usuario user, String senha);
     void apagarUsuario(Usuario user);
+    boolean Verifica(String Login, String senha);
     void listarUsuariosCadastrados();
     
 }
