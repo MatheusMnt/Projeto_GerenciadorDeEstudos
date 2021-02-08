@@ -37,5 +37,19 @@ public class Usuario {
     public String getSenha() {
         return senha;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean usuariosIguais = false;
+        if (obj instanceof Usuario){
+            Usuario user = (Usuario) obj;
+            if (this.nome == user.getNome() && this.login == user.getLogin()
+                    && this.senha == user.getSenha()){
+                        usuariosIguais = true;
+                }
+        }
+
+      return usuariosIguais;
+    }
   
 }

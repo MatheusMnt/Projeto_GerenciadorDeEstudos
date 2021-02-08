@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.interfaceEntrarControle">
+   <children>
+      <TextField fx:id="loginFornecido" layoutX="239.0" layoutY="150.0" />
+      <TextField fx:id="senhaFornecida" layoutX="238.0" layoutY="188.0" />
+      <Text layoutX="179.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha: " />
+      <Text layoutX="182.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login:" />
+      <Text layoutX="167.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não tem cadastro?" />
+      <Button fx:id="botaoEntrar" layoutX="289.0" layoutY="222.0" mnemonicParsing="false" onAction="#acaoBotaoEntrar" text="Entrar" />
+      <Button fx:id="Cadastro" layoutX="288.0" layoutY="308.0" mnemonicParsing="false" onAction="#acaoBotaoCad" prefHeight="16.0" prefWidth="79.0" text="Cadastro" />
+   </children>
+</AnchorPane>

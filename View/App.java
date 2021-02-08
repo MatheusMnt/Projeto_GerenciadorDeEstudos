@@ -11,7 +11,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaceProjeto.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("interfaceLogin.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Scene scene = new Scene(root);
 
