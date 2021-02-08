@@ -50,7 +50,7 @@ public class interfaceEntrarControle {
       
 
       if (users.Verifica(loginFornecido.getText(), senhaFornecida.getText())){
-        System.out.println("clicou!");
+        System.out.println(senhaFornecida.getText());
         FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceProjeto.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 

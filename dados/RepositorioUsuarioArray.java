@@ -8,6 +8,9 @@ import negocio.beans.Usuario;
 public class RepositorioUsuarioArray implements IRepositorioUsuario {
 
     private ArrayList <Usuario> usuarios;
+    Usuario admim = new Usuario("admin", "admin", "admin");
+    
+    
     
     //construtor
     public RepositorioUsuarioArray(int tamanho){
@@ -53,7 +56,7 @@ public class RepositorioUsuarioArray implements IRepositorioUsuario {
     public boolean Verifica(String login, String senha){
         boolean contem = false;
         for (Usuario e : this.usuarios){
-            if (e.getLogin() == login && e.getSenha() == senha){
+            if ((e.getLogin().equals(login) && e.getSenha().equals(senha))){
                 contem = true;
             } 
         }
