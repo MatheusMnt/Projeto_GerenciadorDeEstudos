@@ -24,9 +24,9 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField layoutX="255.0" layoutY="97.0" />
-      <TextField layoutX="255.0" layoutY="173.0" />
-      <TextField layoutX="255.0" layoutY="246.0" />
-      <Button layoutX="274.0" layoutY="328.0" mnemonicParsing="false" text="Criar Login" />
+      <TextField fx:id="NomeDigitado" layoutX="255.0" layoutY="97.0" />
+      <TextField fx:id="LoginDigitado" layoutX="255.0" layoutY="173.0" />
+      <TextField fx:id="SenhaDigitada" layoutX="255.0" layoutY="246.0" />
+      <Button fx:id="CriaLogin" layoutX="274.0" layoutY="328.0" mnemonicParsing="false" onAction="#CriaLoginAcao" text="Criar Login" />
    </children>
 </AnchorPane>

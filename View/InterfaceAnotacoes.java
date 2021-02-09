@@ -9,12 +9,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import negocio.Quadro;
 
 public class InterfaceAnotacoes {
     
-    IRepositorioAnotacoes anotacoes = new RepositorioAnotacoesArray(10);
-    Quadro quadro1 = new Quadro(anotacoes);
+    //IRepositorioAnotacoes anotacoes = new RepositorioAnotacoesArray(10);
+    Quadro quadro1 = new Quadro(App.anotacoes);
 
     @FXML
     private ResourceBundle resources;
@@ -35,6 +36,10 @@ public class InterfaceAnotacoes {
     void acaoDoBotao(ActionEvent event) {
         quadro1.criaAnotacao(tituloDigitado.getText(), textoDigitado.getText());
         quadro1.listarAnotacoes();
+
+        //fecha a interface de anotações depois que salva 
+        Stage cena = (Stage) textoDigitado.getScene().getWindow();
+        cena.close();
     }
 
 

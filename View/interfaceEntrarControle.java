@@ -3,9 +3,6 @@ package View;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import dados.IRepositorioUsuario;
-import dados.RepositorioUsuarioArray;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +15,6 @@ import negocio.beans.Usuario;
 
 public class interfaceEntrarControle {
 
-    IRepositorioUsuario users = new RepositorioUsuarioArray(10);
     Usuario admim = new Usuario("admin", "admin", "admin");
 
     @FXML
@@ -40,26 +36,37 @@ public class interfaceEntrarControle {
     private Button Cadastro;
 
     @FXML
-    void acaoBotaoCad(ActionEvent event) {
+    void acaoBotaoCad(ActionEvent event) throws IOException {
+      FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceCadastro.fxml"));
+        Parent root = (Parent) abrirNovaJAnela.load();
 
+        //coloca o arquivo na tela
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(root));
+        stage1.setTitle("Quadro");
+        stage1.show();
     }
 
     @FXML
     void acaoBotaoEntrar(ActionEvent event) throws IOException {
-      users.addUsuario(admim);
+      App.users.addUsuario(admim);
       
 
-      if (users.Verifica(loginFornecido.getText(), senhaFornecida.getText())){
+      if (App.users.Verifica(loginFornecido.getText(), senhaFornecida.getText())){
         System.out.println(senhaFornecida.getText());
         FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceProjeto.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 
         //coloca o arquivo na tela
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Quadro");
-        stage.show();
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(root));
+        stage1.setTitle("Quadro");
+        stage1.show();
 
+        //fecha a cena quando o login é feito 
+        Stage cena = (Stage) Cadastro.getScene().getWindow();
+        cena.close();
+        
       } else { 
 
         System.out.println("clicou!");
