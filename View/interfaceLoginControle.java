@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import negocio.beans.Usuario;
 
-public class interfaceEntrarControle {
+public class interfaceLoginControle {
 
     Usuario admim = new Usuario("admin", "admin", "admin");
 
@@ -43,7 +43,7 @@ public class interfaceEntrarControle {
         //coloca o arquivo na tela
         Stage stage1 = new Stage();
         stage1.setScene(new Scene(root));
-        stage1.setTitle("Quadro");
+        stage1.setTitle("Cadastro");
         stage1.show();
     }
 
@@ -54,7 +54,7 @@ public class interfaceEntrarControle {
 
       if (App.users.Verifica(loginFornecido.getText(), senhaFornecida.getText())){
         System.out.println(senhaFornecida.getText());
-        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceProjeto.fxml"));
+        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfacePrincipal.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 
         //coloca o arquivo na tela
@@ -70,7 +70,7 @@ public class interfaceEntrarControle {
       } else { 
 
         System.out.println("clicou!");
-        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceNaoCadastrado.fxml"));
+        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfaceNaoCadastrado.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 
         //coloca o arquivo na tela

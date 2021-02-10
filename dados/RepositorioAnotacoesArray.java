@@ -83,5 +83,10 @@ public class RepositorioAnotacoesArray implements IRepositorioAnotacoes {
         }      
     }
 
+    @Override
+    public Anotacao getAnotacao(int i) {
+        return this.anotacoes.get(i);
+    }
+
     
 }
