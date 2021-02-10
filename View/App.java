@@ -14,7 +14,6 @@ public class App extends Application {
     
     public static IRepositorioUsuario users = new RepositorioUsuarioArray(100);
     public static IRepositorioAnotacoes anotacoes = new RepositorioAnotacoesArray(10);
-    
 
     @Override
     public void start(Stage primaryStage) {
@@ -23,7 +22,7 @@ public class App extends Application {
             Parent root = (Parent) fxmlLoader.load();
             Scene scene = new Scene(root);
 
-            primaryStage.setTitle("test-Window");
+            primaryStage.setTitle("Tela de Login");
             primaryStage.setScene(scene);
             primaryStage.show();
             

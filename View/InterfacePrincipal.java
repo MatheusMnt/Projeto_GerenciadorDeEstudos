@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 
@@ -30,6 +30,9 @@ public class InterfacePrincipal {
     private Button listarAnotaçoesBotao;
 
     @FXML
+    private MenuItem newAnotacao;
+
+    @FXML
     void acaoBotaoNovo(ActionEvent event) throws IOException {
         //carrega o arquivo fxml
         FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceAnotacoes.fxml"));
@@ -43,8 +46,23 @@ public class InterfacePrincipal {
            
     }
 
+    
+    @FXML
+    void criaAnotacao(ActionEvent event) throws IOException {
+        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceAnotacoes.fxml"));
+        Parent root = (Parent) abrirNovaJAnela.load();
+
+        //coloca o arquivo na tela
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Anotação");
+        stage.show();
+    }
+
+
     @FXML
     void initialize() {
+        assert newAnotacao != null : "fx:id=\"newAnotacao\" was not injected: check your FXML file 'interfaceProjeto.fxml'.";
         assert botaoNovo != null : "fx:id=\"botaoNovo\" was not injected: check your FXML file 'interfaceProjeto.fxml'.";
         assert listarAnotaçoesBotao != null : "fx:id=\"listarAnotaçoesBotao\" was not injected: check your FXML file 'interfaceProjeto.fxml'.";
 
