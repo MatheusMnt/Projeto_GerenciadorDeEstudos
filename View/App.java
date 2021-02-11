@@ -10,10 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
 public class App extends Application {
     
     public static IRepositorioUsuario users = new RepositorioUsuarioArray(100);
     public static IRepositorioAnotacoes anotacoes = new RepositorioAnotacoesArray(10);
+    public static int contador = -1;
+    
 
     @Override
     public void start(Stage primaryStage) {

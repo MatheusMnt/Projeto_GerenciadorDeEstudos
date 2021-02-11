@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.SubScene?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.TextFlow?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.InterfacePrincipalControle">
   <tabs>
@@ -26,11 +25,18 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <SubScene fx:id="bbb" height="124.0" width="150.0" GridPane.columnIndex="1">
-                    <root>
-                      <Region />
-                    </root>
-                  </SubScene>
+                  <TextFlow fx:id="txtFlow00" lineSpacing="1.0" onMouseClicked="#mouseclicando" prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" />
+                  <TextFlow fx:id="txtFlow01" onMouseClicked="#mouseclicando" prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="3" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </content></Tab>
