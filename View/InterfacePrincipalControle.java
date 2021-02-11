@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -16,7 +17,6 @@ import javafx.stage.Stage;
 public class InterfacePrincipalControle {
 
 
-
     @FXML
     private ResourceBundle resources;
 
@@ -24,20 +24,59 @@ public class InterfacePrincipalControle {
     private TextFlow txtFlow00;
 
     @FXML
-    void mouseclicando(MouseEvent event) throws IOException {
-        if (App.contador >= 0){
-            addAnotacao();
-        } else {
-            abreInterfaceAnotacoes();
-        }
-    }
+    private TextFlow txtFlow01;
 
     @FXML
-    void mousePressionado(MouseEvent event) {
+    private TextFlow txtFlow20;
+
+    @FXML
+    private TextFlow txtFlow30;
+
+    @FXML
+    private TextFlow txtFlow11;
+
+    @FXML
+    private TextFlow txtFlow21;
+
+    @FXML
+    private TextFlow txtFlow31;
+
+    @FXML
+    private TextFlow txtFlow02;
+
+    @FXML
+    private TextFlow txtFlow12;
+
+    @FXML
+    private TextFlow txtFlow22;
+
+    @FXML
+    private TextFlow txtFlow32;
+
+    @FXML
+    private TextFlow txtFlow10;
+
+    @FXML
+    void mouseclicando(MouseEvent event) throws IOException {
+        TextFlow a = (TextFlow) event.getSource();
+        if (event.getButton() == MouseButton.PRIMARY){
+            if (a.getChildren().isEmpty()){
+               addAnotacao(a);
+            } else { System.out.println("cheio");}       
+        } else if (event.getButton() == MouseButton.SECONDARY) {
+            abreInterfaceAnotacoes();
+        }
+        if (event.getClickCount() == 2 && !(a.getChildren().isEmpty())){
+            a.getChildren().removeAll();
+            a.getChildren().clear();
+            a.setStyle("-fx-background-color: #1e92ff;");
+        }  
+        
     }
 
+
     //a seguinte função abre uma nova interface
-    void abreInterfaceAnotacoes() throws IOException {
+   private void abreInterfaceAnotacoes() throws IOException {
         FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfaceAnotacaoNOva.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 
@@ -49,21 +88,32 @@ public class InterfacePrincipalControle {
 
     }
     //quase lá
-    void addAnotacao(){
+    private void addAnotacao(TextFlow txtFlow){
         Text texto1 = new Text(App.anotacoes.getAnotacao(App.contador).getTexto());
         Text texto2 = new Text(App.anotacoes.getAnotacao(App.contador).getTitulo() + "\n");
         texto1.setFill(Color.BLACK);
         texto2.setFill(Color.WHITE);
         texto2.setFont(Font.font("Verdana", 25));
-        txtFlow00.setStyle("-fx-background-color: RED");
-        txtFlow00.getChildren().add(texto2);
-        txtFlow00.getChildren().add(texto1);
+        txtFlow.setStyle(App.anotacoes.getAnotacao(App.contador).getCor());
+        txtFlow.getChildren().add(texto2);
+        txtFlow.getChildren().add(texto1);
     }
 
 
     @FXML
     void initialize() {
         assert txtFlow00 != null : "fx:id=\"txtFlow00\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow01 != null : "fx:id=\"txtFlow01\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow20 != null : "fx:id=\"txtFlow20\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow30 != null : "fx:id=\"txtFlow30\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow11 != null : "fx:id=\"txtFlow11\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow21 != null : "fx:id=\"txtFlow21\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow31 != null : "fx:id=\"txtFlow31\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow02 != null : "fx:id=\"txtFlow02\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow12 != null : "fx:id=\"txtFlow12\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow22 != null : "fx:id=\"txtFlow22\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow10 != null : "fx:id=\"txtFlow00\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+        assert txtFlow32 != null : "fx:id=\"txtFlow32\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
     }
 }
 

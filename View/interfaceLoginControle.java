@@ -37,7 +37,7 @@ public class interfaceLoginControle {
 
     @FXML
     void acaoBotaoCad(ActionEvent event) throws IOException {
-      FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("interfaceCadastro.fxml"));
+      FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfaceCadastro.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 
         //coloca o arquivo na tela
@@ -54,7 +54,7 @@ public class interfaceLoginControle {
 
       if (App.users.Verifica(loginFornecido.getText(), senhaFornecida.getText())){
         System.out.println(senhaFornecida.getText());
-        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfacePrincipal.fxml"));
+        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfacePrincipal2.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 
         //coloca o arquivo na tela

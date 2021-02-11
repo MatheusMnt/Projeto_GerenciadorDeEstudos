@@ -17,7 +17,7 @@ public class Quadro{
      }
      
      public void criaAnotacao(String tituloRecebido, String textoDigitado){
-         this.repositorio.addAnotacao(new Anotacao(tituloRecebido, textoDigitado));
+         this.repositorio.addAnotacao(new Anotacao(tituloRecebido, textoDigitado, "amarelo"));
      }
      public void alteraTitulo(String titulo){
          repositorio.alteraTitulo(titulo);
@@ -25,8 +25,8 @@ public class Quadro{
      void alteraTexto(String titulo){
          repositorio.alteraTexto(titulo);
      }
-     public void apagarAnotacao(String titulo){
-         repositorio.apagarAnotacao(titulo);
+     public void apagarAnotacao(Anotacao anotacao){
+         repositorio.apagarAnotacao(anotacao);
      }
      public void listarAnotacoes(){
          repositorio.listarAnotacoes();

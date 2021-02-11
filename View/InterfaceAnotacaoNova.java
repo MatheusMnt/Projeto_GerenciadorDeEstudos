@@ -76,7 +76,7 @@ public class InterfaceAnotacaoNova {
 
     @FXML
     void funcaoBotao(ActionEvent event) {
-        App.anotacoes.addAnotacao(new Anotacao(titulo.getText(), texto.getText()));
+        App.anotacoes.addAnotacao(new Anotacao(titulo.getText(), texto.getText(), fundo.getStyle()));
         App.contador++;
         Stage cena = (Stage) circuloAmarelo.getScene().getWindow();
         cena.close();

@@ -10,12 +10,14 @@ public class Anotacao {
     private LocalDateTime data;
     private String texto;
     private int qtdChar;
+    private String cor;
 
 
-    public Anotacao(String titulo,  String texto) {
+    public Anotacao(String titulo,  String texto, String cor) {
         this.titulo = titulo;
         this.data = LocalDateTime.now();
         this.texto = texto;
+        this.cor = cor;
     }
     
     public Anotacao() {
@@ -57,4 +59,13 @@ public class Anotacao {
     public int getQtdChar() {
         return qtdChar;
     }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
 }

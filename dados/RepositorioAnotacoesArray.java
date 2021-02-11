@@ -72,13 +72,12 @@ public class RepositorioAnotacoesArray implements IRepositorioAnotacoes {
     }
 
     //a função remove a anotação de acordo com o titulo 
-    public void apagarAnotacao(String titulo){
-        listarAnotacoes();
+    public void apagarAnotacao(Anotacao anotacao){
         for (Anotacao n : anotacoes){
-            if (n.getTitulo().equals(titulo)){
+            if (n.equals(anotacao)){
                 anotacoes.remove(n);
             } else{
-                System.out.println("nenhuma anotação com esse nome!");
+                System.out.println("nenhuma anotação encontrada");
             }
         }      
     }
