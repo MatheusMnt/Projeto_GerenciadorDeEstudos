@@ -8,8 +8,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import negocio.beans.Usuario;
 
@@ -27,7 +30,7 @@ public class interfaceLoginControle {
     private TextField loginFornecido;
 
     @FXML
-    private TextField senhaFornecida;
+    private PasswordField senhaFornecida;
 
     @FXML
     private Button botaoEntrar;
@@ -50,8 +53,7 @@ public class interfaceLoginControle {
     @FXML
     void acaoBotaoEntrar(ActionEvent event) throws IOException {
       App.users.addUsuario(admim);
-      
-
+  
       if (App.users.Verifica(loginFornecido.getText(), senhaFornecida.getText())){
         System.out.println(senhaFornecida.getText());
         FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfacePrincipal2.fxml"));
@@ -68,17 +70,11 @@ public class interfaceLoginControle {
         cena.close();
         
       } else { 
-
-        System.out.println("clicou!");
-        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfaceNaoCadastrado.fxml"));
-        Parent root = (Parent) abrirNovaJAnela.load();
-
-        //coloca o arquivo na tela
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Quadro");
-        stage.show();
-        
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("USUÁRIO NÃO ENCONTRADO");
+        alert.setHeaderText("Nenhum usuário com esses dados foi encontrado");
+        alert.setContentText("Verifique se os dados estão corretos ou Crie um novo Usuário");
+        alert.show();
       }
 
     }

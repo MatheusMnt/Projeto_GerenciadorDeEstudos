@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -15,7 +16,6 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 public class InterfacePrincipalControle {
-
 
     @FXML
     private ResourceBundle resources;
@@ -60,20 +60,26 @@ public class InterfacePrincipalControle {
     void mouseclicando(MouseEvent event) throws IOException {
         TextFlow a = (TextFlow) event.getSource();
         if (event.getButton() == MouseButton.PRIMARY){
-            if (a.getChildren().isEmpty()){
-               addAnotacao(a);
-            } else { System.out.println("cheio");}       
+            try{ 
+                if (a.getChildren().isEmpty()){
+                    addAnotacao(a);
+                } else {
+                    a.getChildren().removeAll();
+                    a.getChildren().clear();
+                    a.setStyle("-fx-background-color: transparent;");
+                } 
+            }
+            catch(Exception e){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Anotação não encontrada");
+                alert.setHeaderText("Ainda não existem anotações");
+                alert.setContentText("Faça uma nova Anotação");
+                alert.show();
+            } 
         } else if (event.getButton() == MouseButton.SECONDARY) {
-            abreInterfaceAnotacoes();
-        }
-        if (event.getClickCount() == 2 && !(a.getChildren().isEmpty())){
-            a.getChildren().removeAll();
-            a.getChildren().clear();
-            a.setStyle("-fx-background-color: #1e92ff;");
-        }  
-        
+             abreInterfaceAnotacoes();
+        }      
     }
-
 
     //a seguinte função abre uma nova interface
    private void abreInterfaceAnotacoes() throws IOException {
@@ -92,8 +98,9 @@ public class InterfacePrincipalControle {
         Text texto1 = new Text(App.anotacoes.getAnotacao(App.contador).getTexto());
         Text texto2 = new Text(App.anotacoes.getAnotacao(App.contador).getTitulo() + "\n");
         texto1.setFill(Color.BLACK);
-        texto2.setFill(Color.WHITE);
-        texto2.setFont(Font.font("Verdana", 25));
+        texto2.setFill(Color.BLACK);
+        texto2.setFont(Font.font("Monospace", 25));
+        texto1.setFont(Font.font("Monospace", 16));
         txtFlow.setStyle(App.anotacoes.getAnotacao(App.contador).getCor());
         txtFlow.getChildren().add(texto2);
         txtFlow.getChildren().add(texto1);
@@ -114,6 +121,7 @@ public class InterfacePrincipalControle {
         assert txtFlow22 != null : "fx:id=\"txtFlow22\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
         assert txtFlow10 != null : "fx:id=\"txtFlow00\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
         assert txtFlow32 != null : "fx:id=\"txtFlow32\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
+   
     }
 }
 
