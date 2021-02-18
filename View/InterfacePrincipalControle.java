@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -94,14 +95,23 @@ public class InterfacePrincipalControle {
 
        
         if(event.getButton() == MouseButton.PRIMARY){
+        try{
             Text texto = new Text();
-            texto.setText(App.disciplinas.getRepoDisciplinas().get(App.indexDisciplina).getNome());
+            texto.setText(App.disciplinas.getRepoDisciplinas().get(App.indexDisciplina).toString());
             HorarioEstudos.add(texto, App.posicaoColuna, App.posicaoLinha);
             
         }
+        catch(Exception e){
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Nenhuma Disciplina Encontrada");
+                alert.setHeaderText("Nenhuma Disciplina Cadastrada");
+                alert.setContentText("Experimente criar uma Disciplina antes de Fazer isso");
+                alert.show();
+            }
+        }
 
         if(event.getButton() == MouseButton.SECONDARY){
-            abreInterfaceAddDisc();
+                abreInterfaceAddDisc();            
         }
         
     }
@@ -190,7 +200,7 @@ public class InterfacePrincipalControle {
 
 
         App.disciplinas.adicionar(new Disciplina("ALGÉBRA", 1, "Taciano", "@gmail.com"));
-        App.disciplinas.adicionar(new Disciplina("CÁLCULO", 1, "André", "@gmail.com"));
+        //App.disciplinas.adicionar(new Disciplina("CÁLCULO", 1, "André", "@gmail.com"));
       
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import negocio.beans.Disciplina;
 
-public class RepositorioDisciplinas {
+public class RepositorioDisciplinas implements IRepositorioDisciplinas {
 
 private ArrayList<Disciplina> repoDisciplinas = new ArrayList<>();
 	
@@ -58,4 +58,5 @@ private ArrayList<Disciplina> repoDisciplinas = new ArrayList<>();
 		}
 	 return contem;
 	}
+
 }

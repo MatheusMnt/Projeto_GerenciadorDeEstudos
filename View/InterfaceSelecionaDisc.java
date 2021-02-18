@@ -43,7 +43,7 @@ public class InterfaceSelecionaDisc {
 
     private void SetarDisc() {
         for (int i = 0; i < App.disciplinas.getRepoDisciplinas().size(); i++) {
-            cbDisciplinas.getItems().add(i, App.disciplinas.getRepoDisciplinas().get(i).getNome());
+            cbDisciplinas.getItems().add(i, App.disciplinas.getRepoDisciplinas().get(i).toString());
         }
     }
 

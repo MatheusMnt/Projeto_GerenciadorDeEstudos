@@ -53,4 +53,9 @@ public class Disciplina {
 			contador += 1;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 }
