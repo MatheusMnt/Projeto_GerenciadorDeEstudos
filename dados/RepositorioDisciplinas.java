@@ -46,4 +46,16 @@ private ArrayList<Disciplina> repoDisciplinas = new ArrayList<>();
 			}
 		}
 	}
+
+	//a funução recebe o nome de uma disciplina
+	//retorna o index se estiver presente e retrna 0 se não estiver presente
+	public int procurarDisc(String nome){
+		int contem = 0;
+		for (int i = 0; i < repoDisciplinas.size(); i++){
+			if (repoDisciplinas.get(i).getNome() == nome){
+				contem = i;
+			}
+		}
+	 return contem;
+	}
 }
