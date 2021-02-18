@@ -25,9 +25,10 @@ public class App extends Application {
     public static int contador = -1;
 
     public static int indexDisciplina = 0;
+    public static int indexDisciplinaBoletim = -1;
     public static int posicaoColuna = 0;
     public static int posicaoLinha = 0;
-
+    public static int posicaoLinhaBoletim = 0;
 
     @Override
     public void start(Stage primaryStage) {

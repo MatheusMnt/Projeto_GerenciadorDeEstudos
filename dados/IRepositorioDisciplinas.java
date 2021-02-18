@@ -9,5 +9,5 @@ public interface IRepositorioDisciplinas {
      void alterarNota(Disciplina disciplina, int posicao, double novaNota);
      void adicionarNota(Disciplina disciplina, double nota);
      int procurarDisc(String nome);
-	ArrayList<Disciplina> getRepoDisciplinas();
+	 ArrayList<Disciplina> getRepoDisciplinas();
 }

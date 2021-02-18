@@ -7,20 +7,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import negocio.beans.Disciplina;
 
 public class InterfacePrincipalControle {
 
-    
+    boolean ligado = true;
     
     @FXML
     private ResourceBundle resources;
@@ -63,6 +64,9 @@ public class InterfacePrincipalControle {
 
     @FXML
     private GridPane HorarioEstudos;
+
+    @FXML
+    private GridPane Boletim;
 
     @FXML
     void mouseclicando(MouseEvent event) throws IOException {
@@ -116,6 +120,40 @@ public class InterfacePrincipalControle {
         
     }
 
+    @FXML
+    void mouseBoletim(MouseEvent event) throws IOException {
+        if (event.getButton() == MouseButton.PRIMARY){
+            // adcionando linhas e colunas
+            Text textoPadrao = new Text();
+            textoPadrao.setText("");
+            textoPadrao.setFont(Font.font("Arial", 18));
+            Boletim.add(textoPadrao, 0, 0);
+
+            ;
+            while(ligado){
+                for(int i = 1; i < 5; i++){
+                    Text notas = new Text();
+                    notas.setText(i + " VA");
+                    Boletim.add(notas, i, 0);
+                }
+                ligado = false;
+            }
+
+            //adicionando texto do usuario
+            Text texto = new Text();
+            texto.setText(App.disciplinas.getRepoDisciplinas().get(App.indexDisciplinaBoletim).toString());
+            texto.setFont(Font.font("Arial", 18));
+            Boletim.add(texto, 0, App.indexDisciplinaBoletim + 2);
+
+           //App.posicaoLinhaBoletim++;
+            PreencheGridBoletim();
+        }
+
+        if(event.getButton() == MouseButton.SECONDARY){
+            abreInterfaceDisciplina();
+        }
+    }
+
 
     //a seguinte função abre uma nova interface
    private void abreInterfaceAnotacoes() throws IOException {
@@ -154,7 +192,31 @@ public class InterfacePrincipalControle {
 
     }
 
-    
+    private void abreInterfaceDisciplina() throws IOException {
+        FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/CadastroDisciplina.fxml"));
+        Parent root = (Parent) abrirNovaJAnela.load();
+
+        //coloca o arquivo na tela
+        Stage stage3 = new Stage();
+        stage3.setScene(new Scene(root));
+        stage3.setTitle("Adiciona Disciplina");
+        stage3.show();
+
+    }
+
+    private void PreencheGridBoletim(){
+        for (int i = 2; i <= App.posicaoLinhaBoletim + 1; i++){
+            for (int j = 1; j <= 4; j++){
+                TextField notas = new TextField();
+                notas.autosize();
+                notas.setPromptText("0");
+                notas.setId("nota" + j + i);
+                AnchorPane branco = new AnchorPane();
+                branco.getChildren().setAll(notas);
+                Boletim.add(branco, j, i);
+            }
+        }
+    }
 
 
     @FXML
@@ -172,7 +234,8 @@ public class InterfacePrincipalControle {
         assert txtFlow10 != null : "fx:id=\"txtFlow00\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
         assert txtFlow32 != null : "fx:id=\"txtFlow32\" was not injected: check your FXML file 'interfacePrincipal.fxml'.";
         assert HorarioEstudos != null : "fx:id=\"HorarioEstudos\" was not injected: check your FXML file 'interfacePrincipal2.fxml'.";
-        
+        assert Boletim != null : "fx:id=\"Boletim\" was not injected: check your FXML file 'interfacePrincipal2.fxml'.";
+       
         App.dias.add("Domingo");
         App.dias.add("Segunda");
         App.dias.add("Terça");
@@ -198,8 +261,8 @@ public class InterfacePrincipalControle {
         App.horas.add("22:00");
         App.horas.add("23:00");
 
-
-        App.disciplinas.adicionar(new Disciplina("ALGÉBRA", 1, "Taciano", "@gmail.com"));
+        
+        //App.disciplinas.adicionar(new Disciplina("ALGÉBRA", 1, "Taciano", "@gmail.com"));
         //App.disciplinas.adicionar(new Disciplina("CÁLCULO", 1, "André", "@gmail.com"));
       
     }
