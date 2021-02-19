@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.EditarBoletim">
+   <children>
+      <TextField fx:id="nota1va" layoutX="84.0" layoutY="90.0" prefHeight="25.0" prefWidth="47.0" />
+      <TextField fx:id="notaFinal" layoutX="225.0" layoutY="136.0" prefHeight="25.0" prefWidth="47.0" />
+      <TextField fx:id="nota3va" layoutX="84.0" layoutY="136.0" prefHeight="25.0" prefWidth="47.0" />
+      <TextField fx:id="nota2va" layoutX="225.0" layoutY="90.0" prefHeight="25.0" prefWidth="47.0" />
+      <TextField fx:id="nomeDisciplina" layoutX="26.0" layoutY="22.0" />
+      <Text layoutX="34.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1VA:" />
+      <Text layoutX="175.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2VA:" />
+      <Text layoutX="34.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3VA:" wrappingWidth="22.13671875" />
+      <Text layoutX="175.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Final" />
+      <Button fx:id="botaoCancelar" layoutX="27.0" layoutY="205.0" mnemonicParsing="false" onAction="#ClickedCancel" text="Cancelar" />
+      <Button fx:id="botaoOk" layoutX="217.0" layoutY="205.0" mnemonicParsing="false" onAction="#okClicked" text="Ok" />
+      <Button fx:id="apagarbotao" layoutX="125.0" layoutY="205.0" mnemonicParsing="false" onAction="#clickedDelete" text="Apagar" />
+   </children>
+</AnchorPane>

@@ -23,27 +23,14 @@ private ArrayList<Disciplina> repoDisciplinas = new ArrayList<>();
 	public void adicionar(Disciplina disciplina) {
 		boolean contem = repoDisciplinas.contains(disciplina);
 		if(contem == false) {
-			repoDisciplinas.add(disciplina);
+			this.repoDisciplinas.add(disciplina);
 		}
 	}
 	public void remover(Disciplina disciplina) {
-		if(repoDisciplinas.contains(disciplina)) {
-			repoDisciplinas.remove(disciplina);
-		}
-	}
-	public void alterarNota(Disciplina disciplina, int posicao, double novaNota) {
-		for(int i = 0; i < repoDisciplinas.size(); i++) {
-			if(repoDisciplinas.get(i).equals(disciplina)) {
-				double notas[] = disciplina.getNotas();
-				notas[posicao-1] = novaNota;
-			}
-		}
-	}
-	public void adicionarNota(Disciplina disciplina, double nota) {
-		for(int i = 0; i < repoDisciplinas.size(); i++) {
-			if(repoDisciplinas.get(i).equals(disciplina)) {
-				disciplina.adicionarNota(nota);
-			}
+		for (Disciplina e : this.repoDisciplinas){
+			if(e.equals(disciplina)){
+				this.repoDisciplinas.remove(e);
+				}
 		}
 	}
 
@@ -57,6 +44,6 @@ private ArrayList<Disciplina> repoDisciplinas = new ArrayList<>();
 			}
 		}
 	 return contem;
-	}
+	}	
 
 }

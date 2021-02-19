@@ -11,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.InterfaceDisciplinaCad">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.InterfaceDisciplinaCad">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Disciplina">
          <font>
@@ -21,7 +20,6 @@
       </Text>
       <GridPane prefHeight="181.0" prefWidth="600.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
@@ -43,48 +41,35 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <GridPane prefHeight="86.0" prefWidth="300.0" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="125.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="115.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Professor:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notas:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
                   </Text>
-                  <TextField fx:id="NomeProfessor">
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1VA" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2VA" GridPane.columnIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3VA" GridPane.columnIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Final" GridPane.columnIndex="4" />
+                  <TextField fx:id="nota1VA" prefHeight="25.0" prefWidth="68.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="nota2VA" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="nota3Va" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="notaFinal" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade de Provas:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="QtdNotas">
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email do Professor:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="EmailProfessor">
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
+            </GridPane>
          </children>
       </GridPane>
       <Button fx:id="AdicionarDisc" mnemonicParsing="false" onAction="#AdicionarDisc" text="Adicionar">

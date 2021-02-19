@@ -17,18 +17,22 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     
+
+    //variaveis universair para simular um banco de dados 
     public static IRepositorioUsuario users = new RepositorioUsuarioArray(100);
     public static IRepositorioAnotacoes anotacoes = new RepositorioAnotacoesArray(10);
     public static IRepositorioDisciplinas disciplinas = new RepositorioDisciplinas(new ArrayList<>(10));
     public static ArrayList <String> dias = new ArrayList<>();
     public static ArrayList <String> horas = new ArrayList<>();
+   
+    //variavéis universais de apoio 
     public static int contador = -1;
-
     public static int indexDisciplina = 0;
     public static int indexDisciplinaBoletim = -1;
     public static int posicaoColuna = 0;
     public static int posicaoLinha = 0;
     public static int posicaoLinhaBoletim = 0;
+   
 
     @Override
     public void start(Stage primaryStage) {

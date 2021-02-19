@@ -29,7 +29,7 @@ public class InterfaceSelecionaDisc {
     private Button botaoOk;
 
     @FXML
-    void AcaoBotaoOK(ActionEvent event) {
+    private void AcaoBotaoOK(ActionEvent event) {
         App.indexDisciplina = App.disciplinas.procurarDisc(cbDisciplinas.getSelectionModel().getSelectedItem());
         App.posicaoColuna = Dias.getSelectionModel().getSelectedIndex() + 1;
         App.posicaoLinha = Horarios.getSelectionModel().getSelectedIndex() + 1;
@@ -57,7 +57,7 @@ public class InterfaceSelecionaDisc {
 
 
     @FXML
-    void initialize() {
+    private void initialize() {
         assert cbDisciplinas != null : "fx:id=\"cbDisciplinas\" was not injected: check your FXML file 'SD.fxml'.";
         assert Dias != null : "fx:id=\"Dias\" was not injected: check your FXML file 'SD.fxml'.";
         assert Horarios != null : "fx:id=\"Horarios\" was not injected: check your FXML file 'SD.fxml'.";

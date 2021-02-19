@@ -39,7 +39,7 @@ public class interfaceLoginControle {
     private Button Cadastro;
 
     @FXML
-    void acaoBotaoCad(ActionEvent event) throws IOException {
+    private void acaoBotaoCad(ActionEvent event) throws IOException {
       FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfaceCadastro.fxml"));
         Parent root = (Parent) abrirNovaJAnela.load();
 
@@ -51,9 +51,10 @@ public class interfaceLoginControle {
     }
 
     @FXML
-    void acaoBotaoEntrar(ActionEvent event) throws IOException {
+    private void acaoBotaoEntrar(ActionEvent event) throws IOException {
       App.users.addUsuario(admim);
-  
+      
+      //verifica se o usuario está cadastrado
       if (App.users.Verifica(loginFornecido.getText(), senhaFornecida.getText())){
         System.out.println(senhaFornecida.getText());
         FXMLLoader abrirNovaJAnela = new FXMLLoader(getClass().getResource("resources/interfacePrincipal2.fxml"));
@@ -69,6 +70,7 @@ public class interfaceLoginControle {
         Stage cena = (Stage) Cadastro.getScene().getWindow();
         cena.close();
         
+      //se o usuario não está cdastrado coloca um alerta na tela 
       } else { 
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("USUÁRIO NÃO ENCONTRADO");
@@ -80,7 +82,7 @@ public class interfaceLoginControle {
     }
 
     @FXML
-    void initialize() {
+    private void initialize() {
         assert loginFornecido != null : "fx:id=\"loginFornecido\" was not injected: check your FXML file 'interfaceLogin.fxml'.";
         assert senhaFornecida != null : "fx:id=\"senhaFornecida\" was not injected: check your FXML file 'interfaceLogin.fxml'.";
         assert botaoEntrar != null : "fx:id=\"botaoEntrar\" was not injected: check your FXML file 'interfaceLogin.fxml'.";

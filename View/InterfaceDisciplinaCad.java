@@ -1,6 +1,5 @@
 package View;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,6 +11,9 @@ import negocio.beans.Disciplina;
 
 public class InterfaceDisciplinaCad {
 
+    private boolean okClicked = false;
+    private Stage dialogStage;
+
     @FXML
     private ResourceBundle resources;
 
@@ -22,35 +24,48 @@ public class InterfaceDisciplinaCad {
     private TextField NomeDisciplina;
 
     @FXML
-    private TextField NomeProfessor;
+    private TextField nota1VA;
 
     @FXML
-    private TextField QtdNotas;
+    private TextField nota2VA;
 
     @FXML
-    private TextField EmailProfessor;
+    private TextField nota3Va;
+
+    @FXML
+    private TextField notaFinal;
 
     @FXML
     private Button AdicionarDisc;
 
     @FXML
-    void AdicionarDisc(ActionEvent event) {
-        App.disciplinas.adicionar(new Disciplina(NomeDisciplina.getText(), Integer.parseInt(QtdNotas.getText()), NomeProfessor.getText(), EmailProfessor.getText()));
-        App.posicaoLinhaBoletim++;
-        App.indexDisciplinaBoletim++;
-        Stage cena = (Stage) NomeDisciplina.getScene().getWindow();
-        cena.close();
+    private void AdicionarDisc(ActionEvent event) {
+        App.disciplinas.adicionar(new Disciplina(NomeDisciplina.getText(), Double.parseDouble(nota1VA.getText()),
+            Double.parseDouble(nota2VA.getText()), Double.parseDouble(nota3Va.getText()), Double.parseDouble(notaFinal.getText())));
+        okClicked = true;
+        dialogStage.close();
     }
 
     @FXML
     void initialize() {
         assert NomeDisciplina != null : "fx:id=\"NomeDisciplina\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
-        assert NomeProfessor != null : "fx:id=\"NomeProfessor\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
-        assert QtdNotas != null : "fx:id=\"QtdNotas\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
-        assert EmailProfessor != null : "fx:id=\"EmailProfessor\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
+        assert nota1VA != null : "fx:id=\"nota1VA\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
+        assert nota2VA != null : "fx:id=\"nota2VA\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
+        assert nota3Va != null : "fx:id=\"nota3Va\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
+        assert notaFinal != null : "fx:id=\"notaFinal\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
         assert AdicionarDisc != null : "fx:id=\"AdicionarDisc\" was not injected: check your FXML file 'CadastroDisciplina.fxml'.";
 
     }
+
+
+	public boolean isOkClicked() {
+		return okClicked;
+	}
+
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
 }
+
 
 

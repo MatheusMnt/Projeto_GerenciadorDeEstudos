@@ -50,27 +50,27 @@ public class InterfaceAnotacaoNova {
 
 
     @FXML
-    void clicouAzul(MouseEvent event) {   
+    private void clicouAzul(MouseEvent event) {   
        fundo.setStyle("-fx-background-color: #a8d0f4;");
     }
 
     @FXML
-    void clicouBranco(MouseEvent event) {
+    private void clicouBranco(MouseEvent event) {
         fundo.setStyle("-fx-background-color: #ffffff;");
     }
 
     @FXML
-    void clicouRosa(MouseEvent event) {
+    private void clicouRosa(MouseEvent event) {
         fundo.setStyle("-fx-background-color: #f893c4;");
     }
 
     @FXML
-    void clicouVerde(MouseEvent event) {
+    private void clicouVerde(MouseEvent event) {
         fundo.setStyle("-fx-background-color: #94f797;");
     }
 
     @FXML
-    void clicouamarelo(MouseEvent event) {
+    private void clicouamarelo(MouseEvent event) {
         fundo.setStyle("-fx-background-color: #fff23f;");
     }
 

@@ -30,7 +30,7 @@ public class interfaceCadastroControle {
     private Button CriaLogin;
 
     @FXML
-    void CriaLoginAcao(ActionEvent event) {
+    private void CriaLoginAcao(ActionEvent event) {
         Usuario user = new Usuario(NomeDigitado.getText(), LoginDigitado.getText(), SenhaDigitada.getText());
         App.users.addUsuario(user);
         Stage cena = (Stage) NomeDigitado.getScene().getWindow();
